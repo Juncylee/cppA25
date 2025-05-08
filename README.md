@@ -1,4 +1,6 @@
 ---
+<img width="405" alt="image" src="https://github.com/user-attachments/assets/70ff2d3c-894b-4c5a-8a4b-e7b2c4f53827" />  
+
 ![version](https://img.shields.io/github/v/release/Juncylee/cppA25) 
 ![license](https://img.shields.io/badge/license-UNLICENSE-green)
 # 财务助手
@@ -38,7 +40,9 @@ pip3 install pandas
 1.在微信内依次进入底部 **我**、**服务**、**钱包** 页面，再依次点击右上侧 **账单**、**客服中心** 按钮，选择 **下载账单** 控件；    
 2.选择 **用于个人对账** 控件，按需选择账单时间，填写账单寄送至的邮箱并验证身份；  
 3.检查微信支付公众号提供的解压码，从邮箱内下载并通过此解压码解压账单压缩包，得到账单 `.csv` 文件，重命名为 `data.csv` 并替换掉工具根目录内的原有的示例文件。  
-![1](https://github.com/user-attachments/assets/81b70fc4-acac-4dcf-af09-6e369f423b75)  ![2](https://github.com/user-attachments/assets/e368c6cc-f009-48be-93af-9ce219c1e4ac)
+<img width="334" alt="image" src="https://github.com/user-attachments/assets/b073b949-c6af-4142-9971-1d1a76998f35" />
+<img width="334" alt="image" src="https://github.com/user-attachments/assets/59394fa8-650f-4457-9b2c-8119b406b656" />
+
 **⚠️请勿泄露自己的信息给他人**。
 
 #### 二、分析
