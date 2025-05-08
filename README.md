@@ -1,9 +1,6 @@
 ---
-[![github](https://img.shields.io/badge/github-Juncylee-brightgreen.svg)](https://github.com/Juncylee)
-[![GitHub version](https://badge.fury.io/gh/Juncylee%2FcppA25.svg)](https://badge.fury.io/gh/Juncylee%2FcppA25)
-[![npm version](https://badge.fury.io/js/gitbook-plugin-mygitalk.svg)](https://badge.fury.io/js/gitbook-plugin-mygitalk)
-
-
+![version](https://img.shields.io/github/v/release/Juncylee/cppA25) 
+![license](https://img.shields.io/badge/license-UNLICENSE-green)
 # 财务助手
 
 此项目工具通过 python 读取根目录下的账单文档产生总结，通过 C++ 编译出的程序调用 [DeepSeek 大模型 API](https://api-docs.deepseek.com/zh-cn/) 生成理财建议。
@@ -74,7 +71,7 @@ python data_extractor.py
 * 运行 MSYS2 MINGW64：
 ```bash
 #定位至工具根目录
-cd /c/文档目录/都要用斜杠/不要用反斜杠/盘符别加冒号/定位至文件夹即可/Finance-helper
+cd /c/文档目录/不要用反斜杠/盘符别加冒号/盘符前面还有一个斜杠/定位至文件夹即可/Finance-helper
 #重新编译
 g++ -std=c++17 main.cpp -lcurl -lssl -lcrypto -o finance-helper.exe
 ```
