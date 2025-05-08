@@ -49,7 +49,7 @@ pip3 install pandas
 1.打开工具根目录内的 `apikey.txt`，填入自己的 DeepSeek API key 并保存；  
 2.按住 `Shift` 并在工具根目录内空白处右键以从此处打开 powershell 窗口；  
 3.键入并回车：
-```cmd
+```bash
 #提取并生成 data.json 和 data_summary.txt
 python data_extractor.py
 #开始分析
