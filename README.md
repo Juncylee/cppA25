@@ -22,7 +22,7 @@
 ```bash
 #更新基础工具
 pacman -Syu
-#安装 g++、libcurl 及 nlohmann-json
+#安装 gcc、libcurl 及 nlohmann-json
 pacman -S mingw-w64-x86_64-gcc
 pacman -S mingw-w64-x86_64-curl
 pacman -S mingw-w64-x86_64-nlohmann-json
