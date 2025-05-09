@@ -1,5 +1,5 @@
 ---
-![readme](https://github.com/user-attachments/assets/223d81c8-66f2-4ebc-82b6-06978693a733)
+<img width="437" alt="readme" src="https://github.com/user-attachments/assets/4ea67437-d431-4931-ab74-06e0e0046f68" />
 
 
 ![version](https://img.shields.io/github/v/release/Juncylee/cppA25) 
