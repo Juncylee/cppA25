@@ -1,11 +1,12 @@
 ---
-<img width="405" alt="image" src="https://github.com/user-attachments/assets/70ff2d3c-894b-4c5a-8a4b-e7b2c4f53827" />  
+![readme](https://github.com/user-attachments/assets/223d81c8-66f2-4ebc-82b6-06978693a733)
+
 
 ![version](https://img.shields.io/github/v/release/Juncylee/cppA25) 
 ![license](https://img.shields.io/badge/license-UNLICENSE-green)
 # 财务助手
 
-此项目工具通过 python 读取根目录下的账单文档产生总结，通过 C++ 编译出的程序调用 [DeepSeek 大模型 API](https://api-docs.deepseek.com/zh-cn/) 生成理财建议。
+此项目工具读取根目录下的微信账单产生总结，通过调用 [DeepSeek 大模型 API](https://api-docs.deepseek.com/zh-cn/) 生成理财建议。
 
 ### 使用前须知
 
@@ -22,21 +23,16 @@
 ```bash
 #更新基础工具
 pacman -Syu
-#安装 gcc、libcurl 及 nlohmann-json
+#安装 gcc
 pacman -S mingw-w64-x86_64-gcc
+#安装 libcurl
 pacman -S mingw-w64-x86_64-curl
+#安装 nlohmann-json
 pacman -S mingw-w64-x86_64-nlohmann-json
 ```
-3.安装 [python 3.1x 以上的版本](https://www.python.org/downloads/)；  
-4.运行 `cmd`，检查或安装所需环境：
-```python
-#检查 pandas，如没有安装
-pip3 show pandas
-#安装 pandas
-pip3 install pandas
-```
+
 ### 使用方法
-#### 一、获取并提供账单
+#### 一、获取账单
 1.在微信内依次进入底部 **我**、**服务**、**钱包** 页面，再依次点击右上侧 **账单**、**客服中心** 按钮，选择 **下载账单** 控件；    
 2.选择 **用于个人对账** 控件，按需选择账单时间，填写账单寄送至的邮箱并验证身份；  
 3.检查微信支付公众号提供的解压码，从邮箱内下载并通过此解压码解压账单压缩包，得到账单 `.csv` 文件，重命名为 `data.csv` 并替换掉工具根目录内的原有的示例文件。  
@@ -45,19 +41,9 @@ pip3 install pandas
 
 **⚠️请勿泄露自己的信息给他人**。
 
-#### 二、分析
-1.打开工具根目录内的 `apikey.txt`，填入自己的 DeepSeek API key 并保存；  
-2.按住 `Shift` 并在工具根目录内空白处右键以从此处打开 powershell 窗口；  
-3.键入并回车：
-```bash
-#提取并生成 data.json 和 data_summary.txt
-python data_extractor.py
-#开始分析
-./finance-helper.exe
-```
+#### 二、编译（可跳过）
 
-#### 三、编译
-* 经过 AI 优化，此工具具有一定的自检能力。若不满意于目前效果，可编辑 `main.cpp` 后重新编译：
+1.经过 AI 优化，此工具具有一定的自检能力。若不满意于目前效果，可编辑 `FinHelper.cpp` 后重新编译：  
 ```cpp
     json req = {
         {"model", "deepseek-reasoner"},
@@ -72,15 +58,28 @@ python data_extractor.py
 `stream` 决定了是否以流式输出。如果设置为 true，将会以 SSE 的形式以流式发送消息增量。消息流以 data: \[DONE\] 结尾。  
 请[参阅DeepSeek API 文档](https://api-docs.deepseek.com/zh-cn)。  
 
-* 运行 MSYS2 MINGW64：
+2.运行 MSYS2 MINGW64：
 ```bash
 #定位至工具根目录
 cd /c/文档目录/不要用反斜杠/盘符别加冒号/盘符前面还有一个斜杠/定位至文件夹即可/Finance-helper
-#重新编译
-g++ -std=c++17 main.cpp -lcurl -lssl -lcrypto -o finance-helper.exe
+#编译分析工具
+g++ -std=c++17 DataExter.cpp -o DataExter.exe
+#编译总结工具
+g++ -std=c++17 FinHelper.cpp -lcurl -lssl -lcrypto -o FinHelper.exe
 ```
-通过 `Shift` + `Insert` 组合键粘贴；  
-编译后重新进行步骤二即可。
+* 通过 `Ctrl` + `Incert` 组合键复制，`Shift` + `Insert` 组合键粘贴；  
+
+#### 三、运行
+1.打开工具根目录内的 `apikey.txt`，填入自己的 DeepSeek API key 并保存；  
+2.按住 `Shift` 在工具根目录空白处右键，选择 **在此处打开Powershell 窗口**：  
+```powershell
+#运行分析工具
+./DataExter.exe
+#运行总结工具
+./Finhelper.exe
+```
+即可查看分析总结结果。
+
 
 
 
