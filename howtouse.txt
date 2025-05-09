@@ -1,0 +1,11 @@
+#Bash
+g++ -std=c++17 DataExter.cpp -o DataExter.exe
+
+#Bash
+g++ -std=c++17 FinHelper.cpp -lcurl -lssl -lcrypto -o FinHelper.exe
+
+#Powershell
+./DataExter.exe
+
+#Powershell
+./Finhelper.exe
