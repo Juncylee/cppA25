@@ -19,7 +19,8 @@
 * 构建此项目过程中大量使用了 AI 工具以辅助，代码分发不受限制。  
 
 ## 环境准备
-* 包内已有编译好的程式，如不打算重新编译可跳过环境准备。  
+* 包内已有编译好的程式，如不打算重新编译可跳过环境准备。
+    
 1.安装 MinGW-w64（[通过 MSYS2 安装](https://www.msys2.org/)）；  
 2.运行 MSYS2 MINGW64，安装所需环境：  
 ```bash
@@ -46,7 +47,7 @@ pacman -S mingw-w64-x86_64-nlohmann-json
 ### 二、编译
 
 * 包内已有编译好的程式。  
-
+  
 1.经过 AI 优化，此工具具有一定的自检能力。若不满意于目前效果，可修改 `FinHelper.cpp` 后重新编译：  
 ```cpp
 // 调用 DeepSeek 的流式接口
@@ -65,7 +66,7 @@ void callDeepSeekStream(const json &analysis)
     };
 ```
 `model` 决定了使用的模型。默认使用 `Deepseek-reasoner`（R1 模型），可选项有 `deepseek-chat`（V3模型）；  
-`stream` 决定了是否以流式输出。
+`stream` 决定了是否以流式输出。  
 请 [参阅DeepSeek API 文档](https://api-docs.deepseek.com/zh-cn)。  
 
 2.运行 MSYS2 MINGW64：
