@@ -6,7 +6,7 @@
 ![license](https://img.shields.io/badge/license-UNLICENSE-green)
 # 财务助手
 
-在 [Releases](https://github.com/Juncylee/cppA25/releases) 页下载此工具;  
+在 [Releases](https://github.com/Juncylee/cppA25/releases) 页下载此工具（`Finance-helper-vxxx.zip`）并解压到文件夹;    
 此项目工具读取根目录下的微信账单产生总结，通过调用 [DeepSeek 大模型 API](https://api-docs.deepseek.com/zh-cn/) 生成理财建议。
 
 ## 使用前须知
