@@ -4,6 +4,7 @@
 
 ![version](https://img.shields.io/github/v/release/Juncylee/cppA25) 
 ![license](https://img.shields.io/badge/license-UNLICENSE-green)
+
 # 财务助手
 
 在 [Releases](https://github.com/Juncylee/cppA25/releases) 页下载此工具（`Finance-helper-vxxx.zip`）并解压到文件夹;    
@@ -18,7 +19,7 @@
 * 构建此项目过程中大量使用了 AI 工具以辅助，代码分发不受限制。  
 
 ## 环境准备
-
+* 包内已有编译好的程式，如不打算重新编译可跳过环境准备。  
 1.安装 MinGW-w64（[通过 MSYS2 安装](https://www.msys2.org/)）；  
 2.运行 MSYS2 MINGW64，安装所需环境：  
 ```bash
@@ -44,9 +45,9 @@ pacman -S mingw-w64-x86_64-nlohmann-json
 
 ### 二、编译
 
-* 此项可跳过，已打包编译好的程式。  
+* 包内已有编译好的程式。  
 
-1.经过 AI 优化，此工具具有一定的自检能力。若不满意于目前效果，可编辑 `FinHelper.cpp` 后重新编译：  
+1.经过 AI 优化，此工具具有一定的自检能力。若不满意于目前效果，可修改 `FinHelper.cpp` 后重新编译：  
 ```cpp
 // 调用 DeepSeek 的流式接口
 void callDeepSeekStream(const json &analysis)
@@ -64,8 +65,8 @@ void callDeepSeekStream(const json &analysis)
     };
 ```
 `model` 决定了使用的模型。默认使用 `Deepseek-reasoner`（R1 模型），可选项有 `deepseek-chat`（V3模型）；  
-`stream` 决定了是否以流式输出。如果设置为 true，将会以 SSE 的形式以流式发送消息增量。消息流以 data: \[DONE\] 结尾。  
-请[参阅DeepSeek API 文档](https://api-docs.deepseek.com/zh-cn)。  
+`stream` 决定了是否以流式输出。
+请 [参阅DeepSeek API 文档](https://api-docs.deepseek.com/zh-cn)。  
 
 2.运行 MSYS2 MINGW64：
 ```bash
@@ -79,7 +80,7 @@ g++ -std=c++17 FinHelper.cpp -lcurl -lssl -lcrypto -o FinHelper.exe
 * 通过 `Ctrl` + `Incert` 组合键复制，`Shift` + `Insert` 组合键粘贴；  
 
 ### 三、运行
-1.打开工具根目录内的 `apikey.txt`，填入自己的 DeepSeek API key 并保存；  
+**1.打开工具根目录内的 `apikey.txt`，填入自己的 DeepSeek API key 并保存**；  
 2.按住 `Shift` 在工具根目录空白处右键，选择 **在此处打开Powershell 窗口**：  
 ```powershell
 #运行分析工具
