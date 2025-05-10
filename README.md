@@ -41,15 +41,23 @@ pacman -S mingw-w64-x86_64-nlohmann-json
 
 **⚠️请勿泄露自己的信息给他人**。
 
-### 二、编译（可跳过）
+### 二、编译
+
+* 此项可跳过，已打包编译好的程式。  
 
 1.经过 AI 优化，此工具具有一定的自检能力。若不满意于目前效果，可编辑 `FinHelper.cpp` 后重新编译：  
 ```cpp
+// 调用 DeepSeek 的流式接口
+void callDeepSeekStream(const json &analysis)
+{
+    string key = loadApiKey();
+    if (key.empty()) return;
+
     json req = {
         {"model", "deepseek-reasoner"},
         {"stream", true},
         {"messages", json::array({
-            {{"role","system"}, {"content","你是理财助手，请基于以下JSON数据生成总结建议。"}},
+            {{"role","system"}, {"content","你是理财助手，请基于以下数据给出合理并详细的总结建议，回答时禁用markdown语法。"}},
             {{"role","user"}, {"content", analysis.dump()}}
         })}
     };
@@ -61,7 +69,7 @@ pacman -S mingw-w64-x86_64-nlohmann-json
 2.运行 MSYS2 MINGW64：
 ```bash
 #定位至工具根目录
-cd /c/文档目录/不要用反斜杠/盘符别加冒号/盘符前面还有一个斜杠/定位至文件夹即可/Finance-helper
+cd /盘符别加冒号/盘符前面也有斜杠/打开到文件夹位置/不要用反斜杠/
 #编译分析工具
 g++ -std=c++17 DataExter.cpp -o DataExter.exe
 #编译总结工具
